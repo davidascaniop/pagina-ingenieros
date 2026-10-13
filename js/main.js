@@ -251,6 +251,169 @@ if (productsEl && window.CATALOGO) {
   renderList();
 }
 
+// Formularios de contacto y empleo
+// Para activarlos: poner en data-endpoint del <form> la dirección de FormSubmit,
+// por ejemplo https://formsubmit.co/ventas@empresa.com (la primera vez llega un correo para confirmar).
+document.querySelectorAll('form.site-form').forEach((form) => {
+  const WHATSAPP = '580000000000';
+  const status = form.querySelector('.form-status');
+  const submitBtn = form.querySelector('[type="submit"]');
+  const submitText = submitBtn.textContent;
+
+  const fieldWrap = (el) => el.closest('.field');
+  const labelOf = (el) => {
+    const wrap = fieldWrap(el);
+    const label = wrap && (wrap.querySelector('label') || wrap.querySelector('legend'));
+    return label ? label.firstChild.textContent.trim() : el.name;
+  };
+
+  function messageFor(el) {
+    if (el.validity.valueMissing) {
+      if (el.type === 'file') return 'Adjunte el archivo para continuar.';
+      if (el.type === 'radio') return 'Elija una opción.';
+      if (el.tagName === 'SELECT') return 'Elija una opción de la lista.';
+      return 'Este campo es obligatorio.';
+    }
+    if (el.validity.typeMismatch && el.type === 'email') return 'Escriba un correo válido, por ejemplo nombre@empresa.com.';
+    if (el.validity.customError) return el.validationMessage;
+    return 'Revise este campo.';
+  }
+
+  function showError(el, text) {
+    const wrap = fieldWrap(el);
+    if (!wrap) return;
+    wrap.classList.add('is-invalid');
+    let err = wrap.querySelector('.error');
+    if (!err) {
+      err = document.createElement('span');
+      err.className = 'error';
+      err.id = `${el.name}-error`;
+      wrap.appendChild(err);
+    }
+    err.textContent = text;
+    el.setAttribute('aria-invalid', 'true');
+    const ids = (el.getAttribute('aria-describedby') || '').split(' ').filter(Boolean);
+    if (!ids.includes(err.id)) el.setAttribute('aria-describedby', [...ids, err.id].join(' '));
+  }
+
+  function clearError(el) {
+    const wrap = fieldWrap(el);
+    if (!wrap) return;
+    wrap.classList.remove('is-invalid');
+    const err = wrap.querySelector('.error');
+    if (err) {
+      el.setAttribute('aria-describedby', (el.getAttribute('aria-describedby') || '').replace(err.id, '').trim());
+      err.remove();
+    }
+    el.removeAttribute('aria-invalid');
+  }
+
+  // Archivos: muestra los elegidos y revisa el tamaño máximo
+  form.querySelectorAll('input[type="file"]').forEach((input) => {
+    const list = fieldWrap(input).querySelector('.file-list');
+    const maxBytes = Number(input.dataset.maxMb) * 1024 * 1024;
+    input.addEventListener('change', () => {
+      const files = Array.from(input.files);
+      const total = files.reduce((s, f) => s + f.size, 0);
+      list.replaceChildren(...files.map((f) => {
+        const li = document.createElement('li');
+        li.textContent = `${f.name} (${(f.size / 1024 / 1024).toFixed(1)} MB)`;
+        return li;
+      }));
+      input.setCustomValidity(total > maxBytes
+        ? `Los archivos pesan ${(total / 1024 / 1024).toFixed(1)} MB y el máximo es ${input.dataset.maxMb} MB. Quite alguno o envíelos por correo.`
+        : '');
+      clearError(input);
+      if (!input.checkValidity()) showError(input, messageFor(input));
+    });
+  });
+
+  form.querySelectorAll('input, select, textarea').forEach((el) => {
+    el.addEventListener('input', () => { if (el.checkValidity()) clearError(el); });
+    el.addEventListener('change', () => { if (el.checkValidity()) clearError(el); });
+  });
+
+  function summary() {
+    const data = new FormData(form);
+    const lines = [];
+    for (const [key, value] of data.entries()) {
+      if (value instanceof File || !String(value).trim()) continue;
+      const el = form.elements[key];
+      const name = el && el.length && el[0] && el[0].type === 'radio' ? 'Tipo' : labelOf(el.length ? el[0] : el);
+      lines.push(`${name}: ${value}`);
+    }
+    return lines.join('\n');
+  }
+
+  form.addEventListener('submit', (e) => {
+    status.hidden = true;
+    Array.from(form.elements).forEach(clearError);
+    const invalid = Array.from(form.elements).filter((el) => el.willValidate && !el.checkValidity());
+    if (invalid.length) {
+      e.preventDefault();
+      const seen = new Set();
+      invalid.forEach((el) => {
+        if (seen.has(el.name)) return;
+        seen.add(el.name);
+        showError(el, messageFor(el));
+      });
+      invalid[0].focus();
+      return;
+    }
+
+    const endpoint = form.dataset.endpoint;
+    if (!endpoint) {
+      // Aún sin correo configurado: ofrecer enviar por WhatsApp sin perder lo escrito
+      e.preventDefault();
+      const hasFiles = Array.from(form.querySelectorAll('input[type="file"]')).some((i) => i.files.length);
+      const text = `Hola, vengo de la página web.\n${summary()}`;
+      status.className = 'form-status is-info';
+      status.innerHTML = `
+        <strong>El envío por la página se activará muy pronto.</strong>
+        <p>Mientras tanto, envíenos estos mismos datos por WhatsApp con un clic.${hasFiles ? ' Los archivos adjúntelos en el chat.' : ''}</p>
+        <a class="btn btn-yellow" target="_blank" rel="noopener" data-track="clic_whatsapp"
+           href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}">Enviar por WhatsApp</a>`;
+      status.hidden = false;
+      status.scrollIntoView({ block: 'nearest' });
+      return;
+    }
+
+    // FormSubmit: asunto, página de gracias y formato de tabla
+    const hidden = { _subject: form.dataset.subject, _next: new URL('gracias.html', location.href).href, _template: 'table' };
+    Object.entries(hidden).forEach(([name, value]) => {
+      let input = form.querySelector(`input[name="${name}"]`);
+      if (!input) {
+        input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        form.appendChild(input);
+      }
+      input.value = value;
+    });
+    form.action = endpoint;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando…';
+    window.addEventListener('pageshow', () => { submitBtn.disabled = false; submitBtn.textContent = submitText; }, { once: true });
+  });
+});
+
+// Contacto: botones y enlaces que eligen "Licitación" en el formulario
+function pickTipo(value) {
+  const radio = document.querySelector(`input[name="tipo"][value="${value}"]`);
+  if (!radio) return;
+  radio.checked = true;
+  document.getElementById('form-contacto').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  setTimeout(() => radio.focus({ preventScroll: true }), 400);
+}
+document.querySelectorAll('[data-pick-tipo]').forEach((b) => b.addEventListener('click', () => pickTipo(b.dataset.pickTipo)));
+function hashLicitaciones() {
+  if (location.hash !== '#licitaciones') return;
+  const radio = document.querySelector('input[name="tipo"][value^="Licitación"]');
+  if (radio) radio.checked = true;
+}
+hashLicitaciones();
+window.addEventListener('hashchange', hashLicitaciones);
+
 // Año del pie de página
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();

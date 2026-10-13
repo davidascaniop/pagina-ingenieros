@@ -1357,3 +1357,196 @@ p { margin: 0; }
       linear-gradient(135deg, #0E2340, #081629 70%);
   }
 }
+
+/* =========================================================
+   Contacto y empleo: estructura
+   ========================================================= */
+.contact { background: var(--paper); }
+.contact-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 40px;
+  align-items: start;
+}
+.contact-main {
+  padding: clamp(24px, 4vw, 40px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--navy);
+}
+.contact-side { display: grid; gap: 20px; position: sticky; top: 92px; }
+.side-block { padding: 24px; background: var(--white); border: 1px solid var(--line); }
+.side-block h2 { font-size: 1.15rem; font-weight: 800; font-stretch: 108%; margin-bottom: 10px; }
+.side-block p { margin-bottom: 16px; color: var(--steel); }
+.side-wa { background: var(--navy); border-color: var(--navy); }
+.side-wa h2 { color: var(--white); }
+.side-wa p { color: rgba(255,255,255,.78); }
+.side-wa .link { color: var(--white); }
+.side-wa .btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,.55); }
+.side-data { margin: 0; }
+.side-data div { padding: 10px 0; border-bottom: 1px solid var(--paper); }
+.side-data div:last-child { border-bottom: 0; }
+.side-data dt { font-size: .85rem; color: var(--steel); }
+.side-data dd { margin: 2px 0 0; font-weight: 600; color: var(--navy); }
+.side-data a { text-decoration: none; }
+.side-data a:hover { text-decoration: underline; }
+
+@media (max-width: 960px) {
+  .contact-inner { grid-template-columns: 1fr; }
+  .contact-side { position: static; }
+}
+
+/* =========================================================
+   Formularios
+   ========================================================= */
+.site-form { margin-top: 28px; }
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 20px;
+}
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field-full { grid-column: 1 / -1; }
+.field label, .field legend { font-weight: 600; font-size: .95rem; color: var(--navy); }
+.req { color: #B3261E; }
+.hint { font-size: .85rem; color: var(--steel); }
+
+.field input:not([type="radio"]):not([type="file"]),
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font: 500 1rem var(--font);
+  color: var(--anthracite);
+  background: var(--white);
+  border: 2px solid var(--line);
+  border-radius: 2px;
+}
+.field textarea { resize: vertical; min-height: 130px; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px var(--yellow);
+}
+
+/* Tipo de solicitud: opciones como bloques */
+.choice { border: 0; margin: 0 0 24px; padding: 0; }
+.choice legend { margin-bottom: 10px; padding: 0; }
+.choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.choices label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  font-weight: 600;
+  color: var(--navy);
+  border: 2px solid var(--line);
+  cursor: pointer;
+}
+.choices label:hover { border-color: var(--navy); }
+.choices input { width: 18px; height: 18px; accent-color: var(--navy); flex-shrink: 0; }
+.choices label:has(input:checked) { border-color: var(--navy); background: var(--paper); box-shadow: inset 4px 0 0 var(--yellow); }
+.choices label:has(input:focus-visible) { outline: 3px solid var(--yellow); outline-offset: 2px; }
+
+/* Archivo */
+.field-file input[type="file"] {
+  padding: 18px;
+  font: 500 .95rem var(--font);
+  background: var(--paper);
+  border: 2px dashed var(--steel);
+  cursor: pointer;
+}
+.field-file input[type="file"]::file-selector-button {
+  margin-right: 14px;
+  padding: 9px 16px;
+  font: 600 .9rem var(--font);
+  color: var(--white);
+  background: var(--navy);
+  border: 0;
+  cursor: pointer;
+}
+.file-list { list-style: none; margin: 0; padding: 0; font-size: .9rem; color: var(--navy); }
+.file-list li::before { content: "\1F4CE  "; }
+
+/* Errores */
+.field.is-invalid input, .field.is-invalid select, .field.is-invalid textarea { border-color: #B3261E; }
+.field.is-invalid .choices label { border-color: #B3261E; }
+.error { font-size: .88rem; font-weight: 600; color: #B3261E; }
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+.form-note { font-size: .92rem; color: var(--steel); }
+
+.form-status { margin-top: 24px; padding: 20px; border-left: 4px solid var(--yellow); background: var(--paper); }
+.form-status strong { display: block; color: var(--navy); }
+.form-status p { margin: 6px 0 14px; color: var(--anthracite); }
+
+@media (max-width: 640px) {
+  .form-grid, .choices { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   Licitaciones
+   ========================================================= */
+.tenders-inner {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr);
+  gap: 56px;
+  align-items: start;
+}
+.tenders-lead { margin: 14px 0 24px; max-width: 46ch; }
+.steps-compact { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 28px; }
+@media (max-width: 900px) {
+  .tenders-inner { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* =========================================================
+   Ubicaciones
+   ========================================================= */
+.locations { background: var(--paper); }
+.locations-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 32px;
+}
+.map-plan {
+  position: relative;
+  min-height: 340px;
+  background-color: var(--plano);
+  background-image:
+    radial-gradient(circle at 32% 40%, var(--yellow) 0 7px, transparent 8px),
+    radial-gradient(circle at 62% 58%, #A9C1E0 0 6px, transparent 7px),
+    radial-gradient(circle at 74% 30%, #A9C1E0 0 6px, transparent 7px),
+    repeating-linear-gradient(0deg, var(--plano-grid) 0 1px, transparent 1px 24px),
+    repeating-linear-gradient(90deg, var(--plano-grid) 0 1px, transparent 1px 24px);
+}
+.map-note {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  font-size: .82rem;
+  color: rgba(169,193,224,.85);
+}
+.loc-list { list-style: none; margin: 0; padding: 0; background: var(--white); border: 1px solid var(--line); }
+.loc-list li { padding: 20px 22px; border-bottom: 1px solid var(--line); }
+.loc-list li:last-child { border-bottom: 0; }
+.loc-list h3 { font-size: 1.1rem; font-weight: 700; }
+.loc-list p { margin: 4px 0 10px; color: var(--steel); }
+@media (max-width: 900px) {
+  .locations-inner { grid-template-columns: 1fr; }
+  .map-plan { min-height: 220px; }
+}
+
+/* Trabaja con nosotros */
+.jobs-values { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 760px) {
+  .jobs-values { grid-template-columns: 1fr; }
+}
+
+/* Gracias */
+.thanks p { font-size: 1.15rem; margin-bottom: 24px; }

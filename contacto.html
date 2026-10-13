@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto y licitaciones | Nombre de la Empresa</title>
+  <meta name="description" content="Solicite una cotización, envíe un pliego de licitación o escríbanos por WhatsApp. Respondemos en menos de 24 horas hábiles.">
+  <link rel="canonical" href="https://davidascaniop.github.io/pagina-ingenieros/contacto.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_VE">
+  <meta property="og:site_name" content="Nombre de la Empresa">
+  <meta property="og:title" content="Contacto y licitaciones | Nombre de la Empresa">
+  <meta property="og:description" content="Solicite una cotización, envíe un pliego de licitación o escríbanos por WhatsApp. Respondemos en menos de 24 horas hábiles.">
+  <meta property="og:url" content="https://davidascaniop.github.io/pagina-ingenieros/contacto.html">
+  <meta property="og:image" content="https://davidascaniop.github.io/pagina-ingenieros/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=7">
+</head>
+<body>
+
+<!-- ============ ENCABEZADO ============ -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand" aria-label="Inicio">
+      <span class="brand-mark" aria-hidden="true">LOGO</span>
+      <span class="brand-name">Nombre de la Empresa</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="nav" class="nav">
+      <ul>
+        <li><a href="ingenieria.html">Ingeniería</a></li>
+        <li><a href="energia.html">Energía</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="suministros.html">Suministros</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="assets/docs/brochure.pdf" class="btn btn-ghost" download data-track="descarga_brochure">Descargar brochure</a>
+        <a href="contacto.html" class="btn btn-yellow" data-track="clic_cotizar">Solicitar cotización</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero page-hero-compact" data-cat="servicios">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Ruta"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Contacto</span></nav>
+    <h1>Hablemos de su proyecto</h1>
+    <p class="hero-lead">Envíenos su solicitud, un pliego de licitación o una consulta. Le respondemos en menos de 24 horas hábiles.</p>
+  </div>
+</section>
+
+<section class="section contact">
+  <div class="wrap contact-inner">
+    <div class="contact-main">
+      <h2 class="h2">Solicitar cotización</h2>
+      <p class="muted">Los campos con <span class="req">*</span> son obligatorios.</p>
+      <form class="site-form" id="form-contacto" method="post" enctype="multipart/form-data" novalidate
+      data-endpoint="" data-subject="Nueva solicitud desde la página web" data-kind="contacto">
+        <fieldset class="field field-full choice">
+          <legend>¿Qué necesita? <span class="req" aria-hidden="true">*</span></legend>
+          <div class="choices">
+            <label><input type="radio" name="tipo" value="Cotización de proyecto" required checked> Cotización de proyecto</label>
+            <label><input type="radio" name="tipo" value="Licitación (pliego, RFI o RFP)"> Licitación (pliego, RFI o RFP)</label>
+            <label><input type="radio" name="tipo" value="Suministros"> Suministros</label>
+            <label><input type="radio" name="tipo" value="Mantenimiento o servicio"> Mantenimiento o servicio</label>
+          </div>
+        </fieldset>
+        <div class="form-grid">
+          <div class="field">
+            <label for="nombre">Nombre y apellido <span class="req" aria-hidden="true">*</span></label>
+            <input id="nombre" name="nombre" type="text" required autocomplete="name">
+            
+          </div>
+          <div class="field">
+            <label for="empresa">Empresa</label>
+            <input id="empresa" name="empresa" type="text" autocomplete="organization">
+            
+          </div>
+          <div class="field">
+            <label for="correo">Correo <span class="req" aria-hidden="true">*</span></label>
+            <input id="correo" name="correo" type="email" required autocomplete="email">
+            
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono o WhatsApp <span class="req" aria-hidden="true">*</span></label>
+            <input id="telefono" name="telefono" type="tel" required autocomplete="tel">
+            
+          </div>
+          <div class="field">
+            <label for="sector">Sector</label>
+            <select id="sector" name="sector"><option value="">Seleccione…</option><option>Industrial</option><option>Comercial</option><option>Petrolero</option><option>Eléctrico</option><option>Residencial</option><option>Público o institucional</option><option>Otro</option></select>
+          </div>
+          <div class="field">
+            <label for="ubicacion">Ubicación del proyecto</label>
+            <input id="ubicacion" name="ubicacion" type="text" aria-describedby="ubicacion-hint" >
+            <span class="hint" id="ubicacion-hint">Ciudad o estado donde se hará el trabajo.</span>
+          </div>
+          <div class="field field-full">
+            <label for="mensaje">Cuéntenos qué necesita <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="mensaje" name="mensaje" rows="5" required aria-describedby="mensaje-hint" ></textarea>
+            <span class="hint" id="mensaje-hint">Alcance, cantidades, plazos o cualquier detalle que tenga.</span>
+          </div>
+          <div class="field field-full field-file">
+            <label for="adjuntos">Adjuntar archivos</label>
+            <input id="adjuntos" name="adjuntos" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.dwg,.dxf,.jpg,.jpeg,.png,.zip" data-max-mb="10" multiple aria-describedby="adjuntos-hint">
+            <span class="hint" id="adjuntos-hint">Pliego, planos, fotos o especificaciones. PDF, Word, Excel, DWG, imágenes o ZIP. Máximo 10 MB en total.</span>
+            <ul class="file-list" aria-live="polite"></ul>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-yellow btn-lg">Enviar solicitud</button>
+          <p class="form-note">Respondemos en menos de 24 horas hábiles.</p>
+        </div>
+        <div class="form-status" role="status" aria-live="polite" hidden></div>
+      </form>
+    </div>
+
+    <aside class="contact-side" aria-label="Datos de contacto">
+      <div class="side-block side-wa">
+        <h2>¿Prefiere WhatsApp?</h2>
+        <p>Escríbanos y le atiende directamente el equipo comercial.</p>
+        <a href="https://wa.me/580000000000?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20hacer%20una%20consulta." class="btn btn-yellow" target="_blank" rel="noopener" data-track="clic_whatsapp">Escribir por WhatsApp</a>
+      </div>
+      <dl class="side-block side-data">
+        <div><dt>Ventas</dt><dd><a href="tel:+580000000000" data-track="clic_telefono">+58 000 000 0000</a></dd></div>
+        <div><dt>Correo comercial</dt><dd><a href="mailto:ventas@empresa.com" data-track="clic_correo">ventas@empresa.com</a></dd></div>
+        <div><dt>Licitaciones</dt><dd><a href="mailto:licitaciones@empresa.com" data-track="clic_correo">licitaciones@empresa.com</a></dd></div>
+        <div><dt>Horario</dt><dd>Lunes a viernes, 8:00 a 17:00</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="section tenders" id="licitaciones">
+  <div class="wrap tenders-inner">
+    <div>
+      <h2 class="h2">Licitaciones</h2>
+      <p class="tenders-lead">Participamos en licitaciones públicas y privadas. Envíe el pliego de condiciones con el formulario de arriba, eligiendo “Licitación”, o al correo de licitaciones.</p>
+      <button type="button" class="btn btn-navy" data-pick-tipo="Licitación (pliego, RFI o RFP)">Enviar un pliego</button>
+    </div>
+    <ol class="steps steps-compact">
+      <li><h3>Recibimos el pliego</h3><p>Confirmamos la recepción y le indicamos quién lleva su caso.</p></li>
+      <li><h3>Visita o aclaratorias</h3><p>Asistimos a la visita de sitio y enviamos las preguntas a tiempo.</p></li>
+      <li><h3>Oferta completa</h3><p>Entregamos la oferta técnica y económica con la documentación legal.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section locations">
+  <div class="wrap">
+    <header class="section-head">
+      <h2>Dónde estamos</h2>
+      <p>Oficina, taller y almacén. Atendemos proyectos en todo el país.</p>
+    </header>
+    <div class="locations-inner">
+      <div class="map-plan" role="img" aria-label="Mapa de ubicaciones (se activa con la dirección real)">
+        <span class="map-note">El mapa se activa con la dirección real</span>
+      </div>
+      <ul class="loc-list">
+          <li>
+            <h3>Oficina principal</h3>
+            <p>Dirección de la oficina principal</p>
+            <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Direcci%C3%B3n%20de%20la%20oficina%20principal" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          </li>
+          <li>
+            <h3>Taller</h3>
+            <p>Dirección del taller</p>
+            <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Direcci%C3%B3n%20del%20taller" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          </li>
+          <li>
+            <h3>Almacén</h3>
+            <p>Dirección del almacén</p>
+            <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Direcci%C3%B3n%20del%20almac%C3%A9n" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ PIE DE PÁGINA ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a href="index.html" class="brand brand-footer">
+        <span class="brand-mark" aria-hidden="true">LOGO</span>
+        <span class="brand-name">Nombre de la Empresa</span>
+      </a>
+      <p class="footer-note">Ingeniería, construcción, energía, servicios y suministros.</p>
+    </div>
+    <div>
+      <h3>Áreas</h3>
+      <ul>
+        <li><a href="ingenieria.html">Ingeniería y Construcción</a></li>
+        <li><a href="energia.html">Energía</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="suministros.html">Suministros</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Empresa</h3>
+      <ul>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="trabaja-con-nosotros.html">Trabaja con nosotros</a></li>
+        <li><a href="contacto.html#licitaciones">Licitaciones</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contacto</h3>
+      <ul>
+        <li><a href="tel:+580000000000" data-track="clic_telefono">+58 000 000 0000</a></li>
+        <li><a href="mailto:ventas@empresa.com" data-track="clic_correo">ventas@empresa.com</a></li>
+        <li>Dirección de la oficina principal</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© <span id="year">2026</span> Nombre de la Empresa. RIF J-00000000-0</span>
+  </div>
+</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/580000000000?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20hacer%20una%20consulta." class="wa-float" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" data-track="clic_whatsapp">
+  <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script src="js/main.js?v=7"></script>
+</body>
+</html>
