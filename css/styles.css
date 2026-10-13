@@ -1550,3 +1550,31 @@ p { margin: 0; }
 
 /* Gracias */
 .thanks p { font-size: 1.15rem; margin-bottom: 24px; }
+
+/* =========================================================
+   Fase 5: accesibilidad
+   ========================================================= */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 100;
+  padding: 12px 18px;
+  background: var(--yellow);
+  color: var(--navy-deep);
+  font-weight: 700;
+  text-decoration: none;
+}
+.skip-link:focus { top: 12px; }
+main:focus { outline: none; }
+
+/* Las secciones enlazadas no quedan bajo el menú fijo */
+[id] { scroll-margin-top: 88px; }
+
+/* Texto de los logos pendientes con contraste suficiente */
+.trust-logos li { color: var(--steel); }
+
+/* Página 404: atajos */
+.thanks .chips a { text-decoration: none; }
+.thanks .chips li:hover { background: var(--navy); }
+.thanks .chips li:hover a { color: var(--white); }

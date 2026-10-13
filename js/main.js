@@ -2,12 +2,17 @@
 const toggle = document.querySelector('.nav-toggle');
 const nav = document.getElementById('nav');
 if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!open));
-    toggle.setAttribute('aria-label', open ? 'Abrir menú' : 'Cerrar menú');
-    nav.classList.toggle('is-open', !open);
+  const setMenu = (open) => {
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    nav.classList.toggle('is-open', open);
+  };
+  toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+  // Se cierra con Esc (y vuelve el foco al botón) o al elegir una opción
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
   });
+  nav.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
 }
 
 // Cifras del cajetín: cuentan desde 0 una sola vez al cargar
