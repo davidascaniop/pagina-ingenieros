@@ -247,12 +247,12 @@ p { margin: 0; }
 
 .hero h1 {
   color: var(--white);
-  font-size: clamp(2.1rem, 4.6vw, 3.6rem);
+  font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 800;
   font-stretch: 110%;
   line-height: 1.04;
   letter-spacing: -.01em;
-  max-width: 21ch;
+  max-width: 22ch;
 }
 .hero-lead {
   margin-top: 24px;
@@ -265,6 +265,20 @@ p { margin: 0; }
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 36px;
+}
+.hero-promise {
+  margin-top: 16px;
+  font-size: .95rem;
+  color: rgba(255,255,255,.7);
+}
+.hero-promise::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  background: var(--yellow);
+  vertical-align: middle;
 }
 
 /* ---------- Cajetín de plano ---------- */
@@ -365,7 +379,11 @@ p { margin: 0; }
   align-items: center;
   padding: 28px 0;
   border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
 }
+.div-row:hover h3 { color: var(--navy-deep); }
+.div-row:hover .link { text-decoration-color: var(--navy); }
 .div-photo { aspect-ratio: 4 / 3; }
 .div-body h3 {
   font-size: clamp(1.3rem, 2.2vw, 1.65rem);
@@ -395,6 +413,26 @@ p { margin: 0; }
 .ficha-photo { aspect-ratio: 16 / 10; }
 .ficha-body { padding: 22px 22px 26px; }
 .ficha-body h3 { font-size: 1.2rem; font-weight: 700; }
+.ficha-result {
+  margin-top: 10px;
+  padding-left: 12px;
+  border-left: 3px solid var(--yellow);
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* Etiqueta para contenido provisional */
+.sample {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px;
+  font-size: .72rem;
+  font-weight: 500;
+  color: var(--steel);
+  border: 1px dashed var(--steel);
+  vertical-align: middle;
+  white-space: nowrap;
+}
 .ficha dl { margin: 16px 0 0; font-size: .92rem; }
 .ficha dl div {
   display: grid;
@@ -461,39 +499,192 @@ p { margin: 0; }
 }
 
 /* =========================================================
-   Clientes
+   Franja de confianza
    ========================================================= */
-.clients { padding-bottom: clamp(56px, 7vw, 88px); }
-.clients-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 24px;
+.trust {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
 }
-.logo-grid {
+.trust-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+.trust-label {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--steel);
+  max-width: 14ch;
+  line-height: 1.3;
+}
+.trust ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }
+.trust-logos { flex: 1; gap: 12px; }
+.trust-logos li {
+  display: grid;
+  place-items: center;
+  min-width: 110px;
+  height: 48px;
+  padding: 0 12px;
+  border: 1px dashed var(--line);
+  color: #9AA4AE;
+  font-size: .8rem;
+}
+.trust-certs { gap: 8px; }
+.trust-certs li {
+  padding: 6px 12px;
+  border: 2px solid var(--navy);
+  font-size: .82rem;
+  font-weight: 800;
+  font-stretch: 110%;
+  color: var(--navy);
+}
+@media (max-width: 640px) {
+  .trust-label { max-width: none; }
+  .trust-logos li { min-width: 0; flex: 1 1 40%; }
+}
+
+/* =========================================================
+   Por qué elegirnos
+   ========================================================= */
+.why { background: var(--paper); }
+.why-inner {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr);
+  gap: 56px;
+}
+.why-head h2 {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  font-stretch: 112%;
+}
+.why-head p { margin-top: 14px; color: var(--steel); max-width: 40ch; }
+.why-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+  grid-template-columns: 1fr 1fr;
+  gap: 36px 40px;
 }
-.logo-grid li {
+.why-list li { border-top: 3px solid var(--navy); padding-top: 18px; }
+.why-list h3 { font-size: 1.2rem; font-weight: 700; }
+.why-list p { margin-top: 8px; color: var(--steel); font-size: 1rem; }
+@media (max-width: 900px) {
+  .why-inner { grid-template-columns: 1fr; gap: 36px; }
+}
+@media (max-width: 560px) {
+  .why-list { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   Cómo trabajamos (pasos)
+   ========================================================= */
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  counter-reset: paso;
+  border-top: 2px solid var(--navy);
+}
+.steps li {
+  counter-increment: paso;
+  position: relative;
+  padding: 28px 24px 0 0;
+}
+.steps li::before {
+  content: counter(paso);
   display: grid;
   place-items: center;
-  min-height: 96px;
-  padding: 16px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  color: #9AA4AE;
-  font-size: .85rem;
-  text-align: center;
+  width: 40px;
+  height: 40px;
+  margin: -49px 0 18px;
+  background: var(--yellow);
+  color: var(--navy-deep);
+  font-weight: 800;
+  font-stretch: 120%;
 }
+.steps h3 { font-size: 1.15rem; font-weight: 700; }
+.steps p { margin-top: 8px; color: var(--steel); font-size: 1rem; }
 @media (max-width: 900px) {
-  .logo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .steps { grid-template-columns: 1fr 1fr; row-gap: 44px; }
 }
-@media (max-width: 480px) {
-  .logo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 560px) {
+  .steps { grid-template-columns: 1fr; border-top: 0; border-left: 2px solid var(--navy); row-gap: 28px; }
+  .steps li { padding: 0 0 0 28px; }
+  .steps li::before { position: absolute; left: -21px; top: 0; margin: 0; }
+}
+
+/* =========================================================
+   Testimonios
+   ========================================================= */
+.quotes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.quote {
+  margin: 0;
+  padding: 32px;
+  background: var(--paper);
+  border-left: 4px solid var(--yellow);
+}
+.quote blockquote {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--navy);
+}
+.quote figcaption { margin-top: 20px; font-size: .92rem; color: var(--steel); }
+.quote figcaption strong { display: block; color: var(--anthracite); }
+@media (max-width: 760px) {
+  .quotes { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   Preguntas frecuentes
+   ========================================================= */
+.faq-inner {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr);
+  gap: 56px;
+}
+.faq-head h2 {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  font-stretch: 112%;
+}
+.faq-head p { margin-top: 14px; color: var(--steel); }
+.faq-list { border-top: 2px solid var(--navy); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary {
+  position: relative;
+  padding: 20px 44px 20px 0;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--navy);
+  cursor: pointer;
+  list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: transform .2s;
+}
+.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq details p { padding: 0 0 22px; max-width: 64ch; color: var(--steel); }
+@media (max-width: 900px) {
+  .faq-inner { grid-template-columns: 1fr; gap: 28px; }
 }
 
 /* =========================================================

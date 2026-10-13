@@ -28,6 +28,15 @@ if (!reduceMotion) {
   });
 }
 
+// Medición: registra en Google Analytics los clics en WhatsApp, cotizar, brochure, etc.
+// Solo funciona cuando se activa el código de Analytics en el <head>.
+document.addEventListener('click', (e) => {
+  const el = e.target.closest('[data-track]');
+  if (el && typeof window.gtag === 'function') {
+    window.gtag('event', el.dataset.track, { link_url: el.href });
+  }
+});
+
 // Año del pie de página
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
