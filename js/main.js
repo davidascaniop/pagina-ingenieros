@@ -82,6 +82,7 @@ if (gallery) {
     btn.addEventListener('click', () => {
       const ficha = document.getElementById(btn.dataset.gallery);
       title.textContent = ficha.querySelector('h3').textContent;
+      gallery.querySelector('.gallery-main').dataset.cat = ficha.dataset.cat;
       info.replaceChildren(
         ficha.querySelector('.ficha-result').cloneNode(true),
         ficha.querySelector('dl').cloneNode(true)
@@ -176,6 +177,7 @@ if (productsEl && window.CATALOGO) {
     const empty = lista.length === 0;
     emptyEl.hidden = !empty;
     [waBtn, mailBtn].forEach((b) => b.setAttribute('aria-disabled', String(empty)));
+    panel.querySelector('.quote-clear').hidden = empty;
     waBtn.href = empty ? '#' : `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message())}`;
     mailBtn.href = empty ? '#' : `mailto:${CORREO}?subject=${encodeURIComponent('Solicitud de cotización de suministros')}&body=${encodeURIComponent(message())}`;
 

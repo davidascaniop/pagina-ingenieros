@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#A9C1E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Nave industrial con estructura metálica: pórtico y cerchas -->
+  <path d="M70 230V120l130-50 130 50v110"/>
+  <path d="M70 120h260"/>
+  <path d="M70 120l40-15M110 105v15M110 105l45 15M155 120v-32M155 88l45 32M200 70v50M200 120l45-32M245 88v32M245 120l45-15M290 105v15M290 105l40 15" stroke-width="1.5"/>
+  <path d="M110 230V120M290 230V120" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <path d="M150 230v-60h100v60" stroke-width="1.5"/>
+  <path d="M200 170v60" stroke-width="1"/>
+  <path d="M40 230h320" stroke-width="2.5"/>
+  <path d="M40 238l8-8M60 238l8-8M80 238l8-8M100 238l8-8M120 238l8-8M140 238l8-8M160 238l8-8M180 238l8-8M200 238l8-8M220 238l8-8M240 238l8-8M260 238l8-8M280 238l8-8M300 238l8-8M320 238l8-8M340 238l8-8" stroke-width="1"/>
+  <!-- Cotas -->
+  <path d="M70 262h260M70 256v12M330 256v12" stroke-width="1"/>
+  <path d="M352 120v110M346 120h12M346 230h12" stroke-width="1"/>
+  <text x="200" y="280" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">24,00 m</text>
+  <text x="368" y="178" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" transform="rotate(-90 368 178)" text-anchor="middle">8,00 m</text>
+</svg>

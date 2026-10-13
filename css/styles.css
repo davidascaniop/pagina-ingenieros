@@ -1260,3 +1260,100 @@ p { margin: 0; }
     color: var(--navy-deep);
   }
 }
+
+/* =========================================================
+   Dibujos de plano en lugar de fotos (hasta tener las reales)
+   ========================================================= */
+:root {
+  --plano: #12305A;
+  --plano-grid: rgba(169,193,224,.09);
+}
+.div-photo, .ficha-photo, .gallery-main {
+  position: relative;
+  background-color: var(--plano);
+  background-image:
+    var(--dibujo, none),
+    repeating-linear-gradient(0deg, var(--plano-grid) 0 1px, transparent 1px 20px),
+    repeating-linear-gradient(90deg, var(--plano-grid) 0 1px, transparent 1px 20px);
+  background-repeat: no-repeat, repeat, repeat;
+  background-position: center 58%, 0 0, 0 0;
+  background-size: 82% auto, auto, auto;
+}
+/* Aviso discreto de que la foto real está pendiente */
+.div-photo::after, .ficha-photo::after {
+  content: "Foto pendiente";
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  font-size: .72rem;
+  color: rgba(169,193,224,.75);
+}
+
+[data-cat="ingenieria"] .div-photo, [data-cat="ingenieria"] .ficha-photo, .gallery-main[data-cat="ingenieria"] { --dibujo: url("../assets/img/planos/ingenieria.svg"); }
+[data-cat="energia"] .div-photo, [data-cat="energia"] .ficha-photo, .gallery-main[data-cat="energia"] { --dibujo: url("../assets/img/planos/energia.svg"); }
+[data-cat="servicios"] .div-photo, [data-cat="servicios"] .ficha-photo, .gallery-main[data-cat="servicios"] { --dibujo: url("../assets/img/planos/servicios.svg"); }
+[data-cat="suministros"] .div-photo, [data-cat="suministros"] .ficha-photo, .gallery-main[data-cat="suministros"] { --dibujo: url("../assets/img/planos/suministros.svg"); }
+
+.gallery-main { background-size: 60% auto, auto, auto; }
+.gallery-thumbs button {
+  background: var(--plano);
+  color: #A9C1E0;
+}
+.gallery-thumbs button[aria-current="true"] { border-color: var(--yellow); }
+
+/* Portada: estructura dibujada al fondo, se desvanece hacia el texto */
+.hero-photo {
+  background:
+    linear-gradient(90deg, rgba(8,22,41,.97) 0%, rgba(8,22,41,.9) 38%, rgba(8,22,41,.55) 70%, rgba(8,22,41,.35) 100%),
+    url("../assets/img/planos/energia.svg") right 6% bottom 0 / auto 96% no-repeat,
+    repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 32px),
+    linear-gradient(135deg, #1B3A63, #0E2340 60%, #2B2F33);
+}
+
+/* Encabezado de páginas internas: el dibujo de su área */
+.page-hero[data-cat] {
+  background:
+    linear-gradient(90deg, rgba(8,22,41,.96) 0%, rgba(8,22,41,.88) 45%, rgba(8,22,41,.6) 100%),
+    var(--dibujo) right 2% center / auto 125% no-repeat,
+    repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 32px),
+    linear-gradient(135deg, #0E2340, #081629 70%);
+}
+.page-hero[data-cat="ingenieria"] { --dibujo: url("../assets/img/planos/ingenieria.svg"); }
+.page-hero[data-cat="energia"] { --dibujo: url("../assets/img/planos/energia.svg"); }
+.page-hero[data-cat="servicios"] { --dibujo: url("../assets/img/planos/servicios.svg"); }
+.page-hero[data-cat="suministros"] { --dibujo: url("../assets/img/planos/suministros.svg"); }
+
+@media (max-width: 900px) {
+  .hero-photo { background-position: 0 0, right -30% bottom -4%, 0 0, 0 0, 0 0; background-size: auto, auto 70%, auto, auto, auto; }
+  .page-hero[data-cat] { background-size: auto, auto 70%, auto, auto, auto; background-position: 0 0, right -20% top 30%, 0 0, 0 0, 0 0; }
+}
+
+.cajetin { background: rgba(8,22,41,.88); }
+
+/* Encabezado compacto: el dibujo entra completo */
+.page-hero-compact[data-cat] { background-size: auto, auto 96%, auto, auto, auto; background-position: 0 0, right 4% center, 0 0, 0 0, 0 0; }
+
+/* Laptops: el menú no cabe con los dos botones */
+@media (min-width: 1281px) and (max-width: 1440px) {
+  .nav-actions .btn-ghost { display: none; }
+}
+
+/* Celular: la portada sin dibujo, para que el texto se lea limpio */
+@media (max-width: 900px) {
+  .hero-photo {
+    background:
+      repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 32px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 32px),
+      linear-gradient(160deg, #0E2340, #081629 70%);
+  }
+}
+@media (max-width: 900px) {
+  .page-hero[data-cat] {
+    background:
+      repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 32px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 32px),
+      linear-gradient(135deg, #0E2340, #081629 70%);
+  }
+}

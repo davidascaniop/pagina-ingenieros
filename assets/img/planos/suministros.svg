@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#A9C1E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Tubería con bridas y válvula de compuerta -->
+  <path d="M20 170h110M20 210h110M270 170h110M270 210h110"/>
+  <!-- Bridas -->
+  <rect x="130" y="156" width="14" height="68" stroke-width="1.5"/>
+  <rect x="256" y="156" width="14" height="68" stroke-width="1.5"/>
+  <path d="M137 162v4M137 214v4M263 162v4M263 214v4" stroke-width="1"/>
+  <!-- Cuerpo de la válvula -->
+  <path d="M144 166h112v48H144z"/>
+  <path d="M170 166l30-26 30 26" />
+  <path d="M175 140h50v-20h-50z" stroke-width="1.5"/>
+  <!-- Vástago y volante -->
+  <path d="M200 120V70" stroke-width="2"/>
+  <ellipse cx="200" cy="66" rx="52" ry="10"/>
+  <path d="M148 66h104M200 56v20" stroke-width="1"/>
+  <!-- Eje de la tubería -->
+  <path d="M10 190h380" stroke-width="1" stroke-dasharray="14 5 3 5"/>
+  <!-- Cotas -->
+  <path d="M130 250h140M130 244v12M270 244v12" stroke-width="1"/>
+  <text x="200" y="270" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Válvula 6" ANSI 300</text>
+  <path d="M30 150v-30h60" stroke-width="1"/>
+  <text x="96" y="124" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12">API 5L</text>
+</svg>

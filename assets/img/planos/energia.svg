@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#A9C1E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Torre de transmisión en celosía -->
+  <path d="M170 255L190 40h20l20 215"/>
+  <path d="M190 40l-3 32M210 40l3 32" stroke-width="1"/>
+  <path d="M187 72h26M183 112h34M179 152h42M175 192h50M171 232h58" stroke-width="1.5"/>
+  <path d="M187 72l30 40M213 72l-30 40M183 112l38 40M217 112l-38 40M179 152l46 40M221 152l-46 40M175 192l54 40M225 192l-54 40" stroke-width="1"/>
+  <!-- Crucetas -->
+  <path d="M130 72h140M120 112h160" stroke-width="2"/>
+  <path d="M130 72l57 18M270 72l-57 18M120 112l63 16M280 112l-63 16" stroke-width="1"/>
+  <!-- Aisladores -->
+  <path d="M135 72v16M265 72v16M125 112v16M275 112v16" stroke-width="1.5"/>
+  <circle cx="135" cy="92" r="3"/><circle cx="265" cy="92" r="3"/><circle cx="125" cy="132" r="3"/><circle cx="275" cy="132" r="3"/>
+  <!-- Conductores -->
+  <path d="M20 110q57 18 115-18M265 92q57 36 115 6M20 150q52 14 105-18M275 132q52 32 105 4" stroke-width="1.2"/>
+  <path d="M60 255h280" stroke-width="2.5"/>
+  <path d="M60 263l8-8M80 263l8-8M100 263l8-8M120 263l8-8M140 263l8-8M160 263l8-8M180 263l8-8M200 263l8-8M220 263l8-8M240 263l8-8M260 263l8-8M280 263l8-8M300 263l8-8M320 263l8-8" stroke-width="1"/>
+  <text x="300" y="52" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12">115 kV</text>
+</svg>
