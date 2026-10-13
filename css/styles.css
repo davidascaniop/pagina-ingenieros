@@ -768,3 +768,216 @@ p { margin: 0; }
   transition: transform .15s;
 }
 .wa-float:hover { transform: scale(1.06); }
+
+/* =========================================================
+   Menú: página actual
+   ========================================================= */
+.nav ul a[aria-current="page"] { color: var(--navy); font-weight: 700; border-bottom-color: var(--yellow); }
+
+/* =========================================================
+   Páginas internas: encabezado
+   ========================================================= */
+.page-hero {
+  color: var(--white);
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 32px),
+    linear-gradient(135deg, #0E2340, #081629 70%);
+  padding: clamp(48px, 7vw, 88px) 0;
+}
+.page-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: end;
+}
+.page-hero h1 {
+  color: var(--white);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 800;
+  font-stretch: 110%;
+  line-height: 1.06;
+  max-width: 22ch;
+}
+.page-hero-compact { padding-bottom: clamp(40px, 5vw, 64px); }
+
+.breadcrumb {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: .9rem;
+  color: rgba(255,255,255,.65);
+}
+.breadcrumb a { color: rgba(255,255,255,.85); }
+.breadcrumb a:hover { color: var(--yellow); }
+
+.cj-rows { margin: 0; }
+.cj-rows div {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  border-bottom: 1px solid rgba(255,255,255,.3);
+}
+.cj-rows div:last-child { border-bottom: 0; }
+.cj-rows dt, .cj-rows dd { margin: 0; padding: 12px 14px; }
+.cj-rows dt { color: rgba(255,255,255,.65); border-right: 1px solid rgba(255,255,255,.3); }
+.cj-rows dd { color: var(--white); font-size: .9rem; font-weight: 600; }
+
+@media (max-width: 900px) {
+  .page-hero-inner { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* =========================================================
+   Servicios de cada área
+   ========================================================= */
+.svc-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px 36px;
+}
+.svc-grid li { border-top: 3px solid var(--navy); padding-top: 18px; }
+.svc-grid h3 { font-size: 1.2rem; font-weight: 700; }
+.svc-grid p { margin-top: 8px; color: var(--steel); font-size: 1rem; }
+
+/* Lo que recibe + sectores */
+.receive { background: var(--paper); }
+.receive-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 56px;
+}
+.receive h2 {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 800;
+  font-stretch: 110%;
+  margin-bottom: 24px;
+}
+.checklist { list-style: none; margin: 0; padding: 0; }
+.checklist li {
+  position: relative;
+  padding: 12px 0 12px 36px;
+  border-bottom: 1px solid var(--line);
+  font-weight: 500;
+}
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 17px;
+  width: 14px;
+  height: 8px;
+  border-left: 3px solid var(--navy);
+  border-bottom: 3px solid var(--navy);
+  transform: rotate(-45deg);
+}
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.chips li {
+  padding: 8px 16px;
+  background: var(--white);
+  border: 2px solid var(--navy);
+  font-weight: 700;
+  color: var(--navy);
+}
+@media (max-width: 800px) {
+  .receive-inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.proj-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 640px) {
+  .proj-grid-2 { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   Proyectos: filtro y fichas
+   ========================================================= */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filter {
+  padding: 9px 16px;
+  font: 600 .92rem/1.2 var(--font);
+  color: var(--navy);
+  background: var(--white);
+  border: 2px solid var(--line);
+  cursor: pointer;
+}
+.filter:hover { border-color: var(--navy); }
+.filter.is-active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.filter-count { margin: 16px 0 24px; font-size: .9rem; color: var(--steel); }
+
+.ficha { display: flex; flex-direction: column; }
+.ficha[hidden] { display: none; }
+.ficha-body { display: flex; flex-direction: column; flex: 1; }
+.ficha-cat { font-size: .85rem; font-weight: 600; color: var(--steel); margin-bottom: 6px; }
+.ficha-btn { margin-top: auto; align-self: flex-start; }
+.ficha dl:has(+ .ficha-btn) { margin-bottom: 20px; }
+
+/* =========================================================
+   Galería de proyecto
+   ========================================================= */
+.gallery {
+  width: min(960px, calc(100% - 32px));
+  max-height: calc(100% - 32px);
+  padding: 0;
+  border: 0;
+  border-top: 4px solid var(--yellow);
+  background: var(--white);
+  overflow: auto;
+}
+.gallery::backdrop { background: rgba(8,22,41,.82); }
+.gallery-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+}
+.gallery-head h2 { font-size: 1.3rem; font-weight: 800; font-stretch: 108%; }
+.gallery-close {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--navy);
+  background: none;
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
+.gallery-main {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background:
+    repeating-linear-gradient(0deg, rgba(14,35,64,.07) 0 1px, transparent 1px 24px),
+    repeating-linear-gradient(90deg, rgba(14,35,64,.07) 0 1px, transparent 1px 24px),
+    linear-gradient(135deg, #D7DEE5, #B9C4CF);
+}
+.gallery-counter {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 4px 10px;
+  background: var(--navy-deep);
+  color: var(--white);
+  font-size: .85rem;
+}
+.gallery-thumbs { display: flex; gap: 8px; padding: 12px 24px 0; }
+.gallery-thumbs button {
+  width: 88px;
+  aspect-ratio: 4 / 3;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #D7DEE5, #B9C4CF);
+  font: 600 .8rem var(--font);
+  color: var(--steel);
+  cursor: pointer;
+}
+.gallery-thumbs button[aria-current="true"] { border-color: var(--navy); }
+.gallery-info { padding: 16px 24px 24px; }
+.gallery-info dl { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px 24px; }
+.gallery-info dt { font-size: .85rem; color: var(--steel); }
+.gallery-info dd { margin: 2px 0 0; font-weight: 600; }
+.gallery-info .ficha-result { margin: 0 0 16px; }
+
+/* Ajustes fase 2 */
+.btn-ghost { background: var(--white); }
+.receive + .projects { background: var(--white); }
