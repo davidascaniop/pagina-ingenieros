@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suministros | Nombre de la Empresa</title>
+  <meta name="description" content="Catálogo de suministros eléctricos, industriales, petroleros y de construcción. Arme su lista y reciba su cotización por WhatsApp o correo.">
+  <link rel="canonical" href="https://davidascaniop.github.io/pagina-ingenieros/suministros.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_VE">
+  <meta property="og:site_name" content="Nombre de la Empresa">
+  <meta property="og:title" content="Suministros | Nombre de la Empresa">
+  <meta property="og:description" content="Catálogo de suministros eléctricos, industriales, petroleros y de construcción. Arme su lista y reciba su cotización por WhatsApp o correo.">
+  <meta property="og:url" content="https://davidascaniop.github.io/pagina-ingenieros/suministros.html">
+  <meta property="og:image" content="https://davidascaniop.github.io/pagina-ingenieros/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ ENCABEZADO ============ -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand" aria-label="Inicio">
+      <span class="brand-mark" aria-hidden="true">LOGO</span>
+      <span class="brand-name">Nombre de la Empresa</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="nav" class="nav">
+      <ul>
+        <li><a href="ingenieria.html">Ingeniería</a></li>
+        <li><a href="energia.html">Energía</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="suministros.html" aria-current="page">Suministros</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="assets/docs/brochure.pdf" class="btn btn-ghost" download data-track="descarga_brochure">Descargar brochure</a>
+        <a href="contacto.html" class="btn btn-yellow" data-track="clic_cotizar">Solicitar cotización</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero page-hero-compact">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Ruta"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Suministros</span></nav>
+    <h1>Catálogo de suministros</h1>
+    <p class="hero-lead">Materiales y equipos para los sectores eléctrico, industrial, petrolero y de la construcción. Agregue lo que necesita a su lista y le enviamos la cotización.</p>
+  </div>
+</section>
+
+<section class="section catalog">
+  <div class="wrap catalog-inner">
+    <div class="catalog-main">
+      <div class="catalog-tools">
+        <label class="search">
+          <span class="visually-hidden">Buscar en el catálogo</span>
+          <input type="search" id="cat-search" placeholder="Buscar: cable, válvula, transformador…" autocomplete="off">
+        </label>
+        <div class="filters" role="group" aria-label="Filtrar por sector">
+          <button type="button" class="filter is-active" data-cat-filter="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="filter" data-cat-filter="electrico" aria-pressed="false">Eléctrico</button>
+          <button type="button" class="filter" data-cat-filter="industrial" aria-pressed="false">Industrial</button>
+          <button type="button" class="filter" data-cat-filter="petrolero" aria-pressed="false">Petrolero</button>
+          <button type="button" class="filter" data-cat-filter="construccion" aria-pressed="false">Construcción</button>
+        </div>
+      </div>
+      <p class="filter-count" id="cat-count" aria-live="polite"></p>
+      <ul class="products" id="products"></ul>
+      <p class="catalog-note">¿No encuentra lo que busca? Escríbalo en su lista como un producto aparte o <a class="link" href="https://wa.me/580000000000?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20busco%20un%20material%20que%20no%20est%C3%A1%20en%20el%20cat%C3%A1logo%3A" target="_blank" rel="noopener" data-track="clic_whatsapp">pregúntenos por WhatsApp</a>. Conseguimos también por importación.</p>
+      <noscript><p>Para usar el catálogo active JavaScript en su navegador, o escríbanos por WhatsApp.</p></noscript>
+    </div>
+
+    <aside class="quote-panel" id="lista" aria-labelledby="quote-title">
+      <h2 id="quote-title">Su lista de cotización</h2>
+      <p class="quote-empty">Su lista está vacía. Use “Añadir a cotización” en los productos que necesita.</p>
+      <ul class="quote-items"></ul>
+      <form class="quote-add" autocomplete="off">
+        <label for="quote-custom">Agregar otro producto</label>
+        <div>
+          <input id="quote-custom" type="text" placeholder="Ej.: Tubería HDPE 4 pulgadas">
+          <button type="submit" class="btn btn-ghost">Agregar</button>
+        </div>
+      </form>
+      <div class="quote-actions">
+        <a href="#" class="btn btn-yellow" id="quote-wa" target="_blank" rel="noopener" data-track="enviar_lista_whatsapp">Enviar lista por WhatsApp</a>
+        <a href="#" class="btn btn-ghost" id="quote-mail" data-track="enviar_lista_correo">Enviar por correo</a>
+        <button type="button" class="quote-clear">Vaciar lista</button>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<a href="#lista" class="quote-bar" hidden>Ver mi lista de cotización <span class="quote-bar-count">0</span></a>
+
+</main>
+
+<!-- ============ PIE DE PÁGINA ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a href="index.html" class="brand brand-footer">
+        <span class="brand-mark" aria-hidden="true">LOGO</span>
+        <span class="brand-name">Nombre de la Empresa</span>
+      </a>
+      <p class="footer-note">Ingeniería, construcción, energía, servicios y suministros.</p>
+    </div>
+    <div>
+      <h3>Áreas</h3>
+      <ul>
+        <li><a href="ingenieria.html">Ingeniería y Construcción</a></li>
+        <li><a href="energia.html">Energía</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="suministros.html">Suministros</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Empresa</h3>
+      <ul>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="trabaja-con-nosotros.html">Trabaja con nosotros</a></li>
+        <li><a href="contacto.html#licitaciones">Licitaciones</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contacto</h3>
+      <ul>
+        <li><a href="tel:+580000000000" data-track="clic_telefono">+58 000 000 0000</a></li>
+        <li><a href="mailto:ventas@empresa.com" data-track="clic_correo">ventas@empresa.com</a></li>
+        <li>Dirección de la oficina principal</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© <span id="year">2026</span> Nombre de la Empresa. RIF J-00000000-0</span>
+  </div>
+</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/580000000000?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20cotizar%20suministros." class="wa-float" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" data-track="clic_whatsapp">
+  <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script src="js/catalogo.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
