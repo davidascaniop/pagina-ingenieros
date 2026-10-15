@@ -1643,3 +1643,6 @@ main:focus { outline: none; }
 }
 .map-label { color: var(--white); font-weight: 700; font-size: 1.05rem; }
 .map-link:hover .map-btn { background: var(--yellow-dark); }
+
+/* Correos y usuarios largos no se salen de su columna */
+.site-footer li, .side-data dd { overflow-wrap: anywhere; }
