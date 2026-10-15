@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=13">
+  <link rel="stylesheet" href="css/styles.css?v=14">
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://davidascaniop.github.io/pagina-ingenieros/"}, {"@type": "ListItem", "position": 2, "name": "Nosotros", "item": "https://davidascaniop.github.io/pagina-ingenieros/nosotros.html"}]}
   </script>
@@ -140,39 +140,108 @@
 </section>
 
 <section class="section" id="certificaciones">
-  <div class="wrap certs-page">
-    <div>
-      <h2 class="h2">Habilitación para contratar</h2>
-      <p class="muted">Inscritos y habilitados para trabajar con empresas públicas y privadas.</p>
-      <ul class="cert-cards">
-        <li><strong>RNC</strong><span>Habilitada del 10/10/2026 al 30/06/2027</span></li>
-        <li><strong>RIF</strong><span>J-50857119-3, vigente hasta el 22/07/2029</span></li>
-      </ul>
-    </div>
-    <div>
-      <h2 class="h2">Registros y afiliaciones</h2>
-      <p class="muted">Inscripciones ante los organismos laborales y de seguridad social.</p>
-      <ul class="permits">
-        <li><span>Número de Identificación Laboral (NIL), Ministerio del Trabajo</span><span class="status">Certificado</span></li>
-        <li><span>Instituto Nacional de Capacitación y Educación Socialista (INCES)</span><span class="status">Inscrita</span></li>
-        <li><span>Banco Nacional de Vivienda y Hábitat (BANAVIH), FAOV</span><span class="status">Afiliada</span></li>
-        <li><span>Instituto Venezolano de los Seguros Sociales (IVSS)</span><span class="status">Inscrita</span></li>
-      </ul>
-    </div>
+  <div class="wrap">
+    <header class="section-head">
+      <h2>Registros y documentos</h2>
+      <p>Somos una empresa formal, inscrita y habilitada para contratar con empresas públicas y privadas. Puede ver y descargar nuestros documentos aquí.</p>
+    </header>
+    <ul class="doc-grid">
+      <li class="doc-card">
+        <button type="button" class="doc-thumb" data-doc-view="assets/img/registros/rnc-comprobante.jpg" data-doc-pdf="assets/docs/registros/rnc-comprobante.pdf" data-doc-title="Comprobante de inscripción en el RNC" aria-label="Ver Comprobante de inscripción en el RNC">
+          <img src="assets/img/registros/rnc-comprobante-mini.jpg" alt="" width="420" height="544" loading="lazy">
+        </button>
+        <div class="doc-info">
+          <h3>Comprobante de inscripción en el RNC</h3>
+          <p class="doc-issuer">Registro Nacional de Contratistas</p>
+          <p class="doc-status">Habilitada del 10/10/2026 al 30/06/2027</p>
+          <div class="doc-actions">
+            <button type="button" class="btn btn-navy" data-doc-view="assets/img/registros/rnc-comprobante.jpg" data-doc-pdf="assets/docs/registros/rnc-comprobante.pdf" data-doc-title="Comprobante de inscripción en el RNC">Ver documento</button>
+            <a class="btn btn-ghost" href="assets/docs/registros/rnc-comprobante.pdf" download data-track="descarga_documento">Descargar PDF</a>
+          </div>
+        </div>
+      </li>
+      <li class="doc-card">
+        <button type="button" class="doc-thumb" data-doc-view="assets/img/registros/rif.jpg" data-doc-pdf="assets/docs/registros/rif.pdf" data-doc-title="Registro Único de Información Fiscal (RIF)" aria-label="Ver Registro Único de Información Fiscal (RIF)">
+          <img src="assets/img/registros/rif-mini.jpg" alt="" width="420" height="544" loading="lazy">
+        </button>
+        <div class="doc-info">
+          <h3>Registro Único de Información Fiscal (RIF)</h3>
+          <p class="doc-issuer">SENIAT</p>
+          <p class="doc-status">J-50857119-3, vigente hasta el 22/07/2029</p>
+          <div class="doc-actions">
+            <button type="button" class="btn btn-navy" data-doc-view="assets/img/registros/rif.jpg" data-doc-pdf="assets/docs/registros/rif.pdf" data-doc-title="Registro Único de Información Fiscal (RIF)">Ver documento</button>
+            <a class="btn btn-ghost" href="assets/docs/registros/rif.pdf" download data-track="descarga_documento">Descargar PDF</a>
+          </div>
+        </div>
+      </li>
+      <li class="doc-card">
+        <button type="button" class="doc-thumb" data-doc-view="assets/img/registros/nil.jpg" data-doc-pdf="assets/docs/registros/nil.pdf" data-doc-title="Número de Identificación Laboral (NIL)" aria-label="Ver Número de Identificación Laboral (NIL)">
+          <img src="assets/img/registros/nil-mini.jpg" alt="" width="420" height="297" loading="lazy">
+        </button>
+        <div class="doc-info">
+          <h3>Número de Identificación Laboral (NIL)</h3>
+          <p class="doc-issuer">Ministerio del Poder Popular para el Proceso Social de Trabajo</p>
+          <p class="doc-status">Certificado N° 9739941521</p>
+          <div class="doc-actions">
+            <button type="button" class="btn btn-navy" data-doc-view="assets/img/registros/nil.jpg" data-doc-pdf="assets/docs/registros/nil.pdf" data-doc-title="Número de Identificación Laboral (NIL)">Ver documento</button>
+            <a class="btn btn-ghost" href="assets/docs/registros/nil.pdf" download data-track="descarga_documento">Descargar PDF</a>
+          </div>
+        </div>
+      </li>
+      <li class="doc-card">
+        <button type="button" class="doc-thumb" data-doc-view="assets/img/registros/banavih-faov.jpg" data-doc-pdf="assets/docs/registros/banavih-faov.pdf" data-doc-title="Afiliación al FAOV" aria-label="Ver Afiliación al FAOV">
+          <img src="assets/img/registros/banavih-faov-mini.jpg" alt="" width="420" height="594" loading="lazy">
+        </button>
+        <div class="doc-info">
+          <h3>Afiliación al FAOV</h3>
+          <p class="doc-issuer">Banco Nacional de Vivienda y Hábitat (BANAVIH)</p>
+          <p class="doc-status">Afiliada desde el 30/07/2026</p>
+          <div class="doc-actions">
+            <button type="button" class="btn btn-navy" data-doc-view="assets/img/registros/banavih-faov.jpg" data-doc-pdf="assets/docs/registros/banavih-faov.pdf" data-doc-title="Afiliación al FAOV">Ver documento</button>
+            <a class="btn btn-ghost" href="assets/docs/registros/banavih-faov.pdf" download data-track="descarga_documento">Descargar PDF</a>
+          </div>
+        </div>
+      </li>
+      <li class="doc-card">
+        <button type="button" class="doc-thumb" data-doc-view="assets/img/registros/inces.jpg" data-doc-pdf="assets/docs/registros/inces.pdf" data-doc-title="Registro ante el INCES" aria-label="Ver Registro ante el INCES">
+          <img src="assets/img/registros/inces-mini.jpg" alt="" width="420" height="544" loading="lazy">
+        </button>
+        <div class="doc-info">
+          <h3>Registro ante el INCES</h3>
+          <p class="doc-issuer">Instituto Nacional de Capacitación y Educación Socialista</p>
+          <p class="doc-status">Registro R-26-9-07-0033741. Datos personales ocultos</p>
+          <div class="doc-actions">
+            <button type="button" class="btn btn-navy" data-doc-view="assets/img/registros/inces.jpg" data-doc-pdf="assets/docs/registros/inces.pdf" data-doc-title="Registro ante el INCES">Ver documento</button>
+            <a class="btn btn-ghost" href="assets/docs/registros/inces.pdf" download data-track="descarga_documento">Descargar PDF</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <p class="doc-note">Los documentos se publican con autorización de la empresa. Los datos personales de sus representantes se ocultaron. Puede verificar el RNC en <a class="link" href="https://www.snc.gob.ve" target="_blank" rel="noopener">snc.gob.ve</a> y el RIF en <a class="link" href="https://www.seniat.gob.ve" target="_blank" rel="noopener">seniat.gob.ve</a>.</p>
   </div>
 </section>
+
+<!-- Visor de documentos -->
+<dialog class="doc-viewer" aria-labelledby="doc-viewer-title">
+  <div class="gallery-head">
+    <h2 id="doc-viewer-title"></h2>
+    <div class="doc-viewer-actions">
+      <a class="btn btn-yellow" href="#" download data-track="descarga_documento">Descargar PDF</a>
+      <button type="button" class="gallery-close" aria-label="Cerrar">×</button>
+    </div>
+  </div>
+  <div class="doc-viewer-body"><img src="" alt=""></div>
+</dialog>
 
 <section class="section downloads" id="descargas">
   <div class="wrap">
     <header class="section-head">
       <h2>Descargas</h2>
-      <p>Documentos para su departamento de compras, procura o licitaciones. Los registros se los enviamos por correo o <a class="link" href="https://wa.me/584244057763?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20necesito%20la%20documentaci%C3%B3n%20legal%20de%20la%20empresa." target="_blank" rel="noopener" data-track="clic_whatsapp">WhatsApp</a>.</p>
+      <p>Documentos para su departamento de compras, procura o licitaciones. Si necesita otro documento, pídalo por correo o <a class="link" href="https://wa.me/584244057763?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20necesito%20la%20documentaci%C3%B3n%20legal%20de%20la%20empresa." target="_blank" rel="noopener" data-track="clic_whatsapp">WhatsApp</a>.</p>
     </header>
     <ul class="doc-list">
         <li><span class="doc-name">Brochure corporativo</span><span class="doc-type">PDF</span><a href="assets/docs/brochure.pdf" class="btn btn-navy" download data-track="descarga_documento">Descargar</a></li>
-        <li><span class="doc-name">Comprobante de inscripción en el RNC</span><span class="doc-type">PDF</span><span class="doc-pending">A solicitud</span></li>
-        <li><span class="doc-name">Registro de Información Fiscal (RIF)</span><span class="doc-type">PDF</span><span class="doc-pending">A solicitud</span></li>
-        <li><span class="doc-name">Certificados NIL, INCES y BANAVIH</span><span class="doc-type">PDF</span><span class="doc-pending">A solicitud</span></li>
+        <li><span class="doc-name">Registros de la empresa (RNC, RIF, NIL, BANAVIH, INCES)</span><span class="doc-type">PDF</span><a href="#certificaciones" class="btn btn-ghost">Ver arriba</a></li>
     </ul>
   </div>
 </section>
@@ -240,6 +309,6 @@
   <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
 </a>
 
-<script src="js/main.js?v=13"></script>
+<script src="js/main.js?v=14"></script>
 </body>
 </html>

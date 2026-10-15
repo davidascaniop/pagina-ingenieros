@@ -419,6 +419,29 @@ function hashLicitaciones() {
 hashLicitaciones();
 window.addEventListener('hashchange', hashLicitaciones);
 
+// Nosotros: visor de documentos (imagen grande de la página; el PDF se descarga aparte)
+const docViewer = document.querySelector('dialog.doc-viewer');
+if (docViewer) {
+  const title = docViewer.querySelector('#doc-viewer-title');
+  const img = docViewer.querySelector('.doc-viewer-body img');
+  const download = docViewer.querySelector('a[download]');
+  let opener = null;
+  document.querySelectorAll('[data-doc-view]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      opener = btn;
+      title.textContent = btn.dataset.docTitle;
+      img.src = btn.dataset.docView;
+      img.alt = btn.dataset.docTitle;
+      download.href = btn.dataset.docPdf;
+      docViewer.showModal();
+    });
+  });
+  const close = () => docViewer.close();
+  docViewer.querySelector('.gallery-close').addEventListener('click', close);
+  docViewer.addEventListener('click', (e) => { if (e.target === docViewer) close(); });
+  docViewer.addEventListener('close', () => { if (opener) opener.focus(); });
+}
+
 // Año del pie de página
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();

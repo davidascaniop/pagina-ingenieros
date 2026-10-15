@@ -1646,3 +1646,61 @@ main:focus { outline: none; }
 
 /* Correos y usuarios largos no se salen de su columna */
 .site-footer li, .side-data dd { overflow-wrap: anywhere; }
+
+/* =========================================================
+   Nosotros: registros y documentos
+   ========================================================= */
+.doc-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+.doc-card {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--navy);
+}
+.doc-thumb {
+  align-self: start;
+  padding: 0;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 3px 3px 0 var(--paper);
+  cursor: zoom-in;
+}
+.doc-thumb img { display: block; width: 100%; height: auto; }
+.doc-thumb:hover { border-color: var(--navy); }
+.doc-info h3 { font-size: 1.05rem; font-weight: 700; line-height: 1.25; }
+.doc-issuer { margin-top: 4px; font-size: .85rem; color: var(--steel); }
+.doc-status { margin-top: 8px; font-size: .9rem; font-weight: 600; color: #1E7A46; }
+.doc-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.doc-actions .btn { padding: .55em .9em; font-size: .85rem; }
+.doc-note { margin-top: 24px; max-width: 72ch; font-size: .92rem; color: var(--steel); }
+
+.doc-viewer {
+  width: min(900px, calc(100% - 24px));
+  max-height: calc(100% - 24px);
+  padding: 0;
+  border: 0;
+  border-top: 4px solid var(--yellow);
+  background: var(--paper);
+  overflow: auto;
+}
+.doc-viewer::backdrop { background: rgba(8,22,41,.85); }
+.doc-viewer .gallery-head { position: sticky; top: 0; z-index: 1; background: var(--white); border-bottom: 1px solid var(--line); }
+.doc-viewer-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.doc-viewer-body { padding: 16px; }
+.doc-viewer-body img { display: block; width: 100%; height: auto; background: var(--white); box-shadow: 0 2px 10px rgba(8,22,41,.15); }
+
+@media (max-width: 520px) {
+  .doc-card { grid-template-columns: 90px minmax(0, 1fr); gap: 14px; }
+  .doc-viewer .gallery-head { flex-wrap: wrap; }
+  .doc-viewer-actions .btn { padding: .55em .9em; font-size: .85rem; }
+}
