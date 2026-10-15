@@ -15,6 +15,25 @@ if (toggle && nav) {
   nav.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
 }
 
+// Desplegable "Servicios": clic o teclado para abrir; se cierra con Esc o al hacer clic fuera
+document.querySelectorAll('.has-sub').forEach((item) => {
+  const btn = item.querySelector('.sub-toggle');
+  const setOpen = (open) => {
+    item.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  };
+  btn.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+  document.addEventListener('click', (e) => { if (!item.contains(e.target)) setOpen(false); });
+  item.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && item.classList.contains('is-open')) {
+      e.stopPropagation();
+      setOpen(false);
+      btn.focus();
+    }
+  });
+  item.addEventListener('focusout', (e) => { if (!item.contains(e.relatedTarget)) setOpen(false); });
+});
+
 // Cifras del cajetín: cuentan desde 0 una sola vez al cargar
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!reduceMotion) {
