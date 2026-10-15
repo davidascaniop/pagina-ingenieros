@@ -1604,3 +1604,42 @@ main:focus { outline: none; }
 
 /* Logo completo en Nosotros */
 .about-logo { width: min(300px, 100%); height: auto; margin-top: 36px; }
+
+/* Cajetín: celdas con texto en lugar de cifra */
+.cj-cell dd.cj-text {
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  font-stretch: 112%;
+  line-height: 1.1;
+}
+.cj-cell dd.cj-text small { display: block; margin: 6px 0 0; font-size: .5em; }
+
+/* Mapa real de Google en Contacto */
+.map-embed { background: var(--paper); }
+.map-embed iframe { display: block; width: 100%; height: 100%; min-height: 340px; border: 0; }
+.loc-list p + p { margin-top: -6px; }
+.loc-list p a { color: var(--navy); font-weight: 600; }
+
+/* Ubicación: plano con pin que abre Google Maps */
+.map-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-decoration: none;
+  background-image:
+    linear-gradient(90deg, transparent 47%, rgba(169,193,224,.22) 47% 53%, transparent 53%),
+    linear-gradient(0deg, transparent 58%, rgba(169,193,224,.22) 58% 63%, transparent 63%),
+    repeating-linear-gradient(0deg, var(--plano-grid) 0 1px, transparent 1px 24px),
+    repeating-linear-gradient(90deg, var(--plano-grid) 0 1px, transparent 1px 24px);
+}
+.map-pin {
+  width: 34px;
+  height: 34px;
+  background: var(--yellow);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 0 0 8px rgba(200,146,30,.25);
+}
+.map-label { color: var(--white); font-weight: 700; font-size: 1.05rem; }
+.map-link:hover .map-btn { background: var(--yellow-dark); }

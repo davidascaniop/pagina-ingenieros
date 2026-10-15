@@ -113,8 +113,8 @@ if (gallery) {
 // Suministros: catálogo y lista de cotización
 const productsEl = document.getElementById('products');
 if (productsEl && window.CATALOGO) {
-  const WHATSAPP = '580000000000';      // número de WhatsApp de la empresa
-  const CORREO = 'ventas@empresa.com';  // correo de ventas
+  const WHATSAPP = '584244057763';      // número de WhatsApp de la empresa
+  const CORREO = '350fcingenieria@gmail.com';  // correo de ventas
   const STORE_KEY = 'listaCotizacion';
   const CAT_NAMES = { electrico: 'Eléctrico', industrial: 'Industrial', petrolero: 'Petrolero', construccion: 'Construcción' };
 
@@ -258,9 +258,9 @@ if (productsEl && window.CATALOGO) {
 
 // Formularios de contacto y empleo
 // Para activarlos: poner en data-endpoint del <form> la dirección de FormSubmit,
-// por ejemplo https://formsubmit.co/ventas@empresa.com (la primera vez llega un correo para confirmar).
+// por ejemplo https://formsubmit.co/350fcingenieria@gmail.com (la primera vez llega un correo para confirmar).
 document.querySelectorAll('form.site-form').forEach((form) => {
-  const WHATSAPP = '580000000000';
+  const WHATSAPP = '584244057763';
   const status = form.querySelector('.form-status');
   const submitBtn = form.querySelector('[type="submit"]');
   const submitText = submitBtn.textContent;
