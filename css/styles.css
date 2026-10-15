@@ -4,8 +4,8 @@
 :root {
   --navy: #0E2340;
   --navy-deep: #081629;
-  --yellow: #F2B705;
-  --yellow-dark: #D9A300;
+  --yellow: #C8921E;
+  --yellow-dark: #A97A14;
   --anthracite: #2B2F33;
   --steel: #5B6670;
   --paper: #EEF1F3;
@@ -1578,3 +1578,29 @@ main:focus { outline: none; }
 .thanks .chips a { text-decoration: none; }
 .thanks .chips li:hover { background: var(--navy); }
 .thanks .chips li:hover a { color: var(--white); }
+
+/* =========================================================
+   Marca 350 F'c
+   ========================================================= */
+.brand-logo { display: block; height: 34px; width: auto; }
+.brand-name {
+  padding-left: 12px;
+  border-left: 2px solid var(--yellow);
+  font-size: .78rem;
+  font-weight: 600;
+  font-stretch: 100%;
+  line-height: 1.25;
+  max-width: 17ch;
+  color: var(--navy);
+}
+.brand-footer .brand-logo { height: 30px; }
+.brand-footer .brand-name { color: rgba(255,255,255,.85); }
+@media (max-width: 420px) {
+  .header-inner { gap: 12px; }
+  .brand { gap: 8px; }
+  .brand-logo { height: 22px; }
+  .brand-name { padding-left: 8px; font-size: .66rem; max-width: 13ch; }
+}
+
+/* Logo completo en Nosotros */
+.about-logo { width: min(300px, 100%); height: auto; margin-top: 36px; }
