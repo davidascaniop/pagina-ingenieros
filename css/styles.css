@@ -1305,7 +1305,7 @@ p { margin: 0; }
 .hero-photo {
   background:
     linear-gradient(90deg, rgba(8,22,41,.97) 0%, rgba(8,22,41,.9) 38%, rgba(8,22,41,.55) 70%, rgba(8,22,41,.35) 100%),
-    url("../assets/img/planos/energia.svg") right 6% bottom 0 / auto 96% no-repeat,
+    url("../assets/img/planos/ingenieria.svg") right 4% bottom 6% / auto 88% no-repeat,
     repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 32px),
     repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 32px),
     linear-gradient(135deg, #1B3A63, #0E2340 60%, #2B2F33);
@@ -1812,4 +1812,34 @@ main:focus { outline: none; }
 }
 @media (max-width: 420px) {
   .brand-logo { height: 26px; }
+}
+
+/* =========================================================
+   Paso 3: áreas reales
+   ========================================================= */
+[data-cat="obras"] .div-photo, [data-cat="obras"] .ficha-photo, .page-hero[data-cat="obras"] { --dibujo: url("../assets/img/planos/ingenieria.svg"); }
+[data-cat="clima"] .div-photo, [data-cat="clima"] .ficha-photo, .page-hero[data-cat="clima"] { --dibujo: url("../assets/img/planos/climatizacion.svg"); }
+[data-cat="frio"] .div-photo, [data-cat="frio"] .ficha-photo, .page-hero[data-cat="frio"] { --dibujo: url("../assets/img/planos/refrigeracion.svg"); }
+[data-cat="electricidad"] .div-photo, [data-cat="electricidad"] .ficha-photo, .page-hero[data-cat="electricidad"] { --dibujo: url("../assets/img/planos/electricidad.svg"); }
+
+.ficha-desc { margin-top: 8px; font-size: .95rem; color: var(--anthracite); }
+.ficha dl { margin-top: 14px; }
+
+/* Franja de clientes con nombres */
+.trust-names {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.trust-names li {
+  padding: 6px 12px;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--paper);
+  border-left: 3px solid var(--yellow);
 }

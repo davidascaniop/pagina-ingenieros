@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#A9C1E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Unidad condensadora con ventilador y ducto de suministro -->
+  <rect x="40" y="110" width="150" height="120" rx="3"/>
+  <circle cx="115" cy="170" r="42"/>
+  <circle cx="115" cy="170" r="6" stroke-width="1.5"/>
+  <path d="M115 164c-6-14-2-26 10-30M121 170c14-6 26-2 30 10M115 176c6 14 2 26-10 30M109 170c-14 6-26 2-30-10" stroke-width="1.5"/>
+  <path d="M48 118v104M182 118v104" stroke-width="1" stroke-dasharray="3 4"/>
+  <path d="M50 230v12M180 230v12" stroke-width="2"/>
+  <!-- Líneas de refrigerante -->
+  <path d="M190 150h40v-70h60M190 170h50v-80h50" stroke-width="1.5"/>
+  <!-- Ducto y difusores -->
+  <path d="M290 60h80v40h-80z"/>
+  <path d="M300 100v18h60v-18M310 118v8M330 118v8M350 118v8" stroke-width="1.5"/>
+  <path d="M300 140c10 8 50 8 60 0M296 152c14 10 54 10 68 0" stroke-width="1" stroke-dasharray="4 4"/>
+  <path d="M20 242h200" stroke-width="2.5"/>
+  <path d="M40 262h150M40 256v12M190 256v12" stroke-width="1"/>
+  <text x="115" y="282" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Unidad 5 TR</text>
+  <text x="330" y="52" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Ducto</text>
+</svg>

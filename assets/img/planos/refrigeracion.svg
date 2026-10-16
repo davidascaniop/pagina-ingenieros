@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#A9C1E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Cava cuarto en corte: paneles aislados, puerta, evaporador y condensadora -->
+  <path d="M60 240V80h240v160"/>
+  <path d="M70 240V90h220v150" stroke-width="1" stroke-dasharray="5 4"/>
+  <!-- Puerta -->
+  <rect x="190" y="130" width="70" height="110"/>
+  <path d="M250 175v22" stroke-width="3"/>
+  <!-- Evaporador -->
+  <rect x="90" y="96" width="80" height="26"/>
+  <circle cx="110" cy="109" r="8" stroke-width="1.5"/>
+  <circle cx="150" cy="109" r="8" stroke-width="1.5"/>
+  <path d="M100 130l-6 10M120 130l-6 10M140 130l-6 10M160 130l-6 10" stroke-width="1" stroke-dasharray="2 3"/>
+  <!-- Estantes -->
+  <path d="M84 170h86M84 200h86M84 230h86" stroke-width="1.5"/>
+  <!-- Condensadora sobre la cava -->
+  <rect x="240" y="44" width="80" height="36"/>
+  <circle cx="262" cy="62" r="11" stroke-width="1.5"/>
+  <path d="M290 54h20M290 62h20M290 70h20" stroke-width="1"/>
+  <path d="M240 62h-60v34" stroke-width="1.5"/>
+  <path d="M40 240h290" stroke-width="2.5"/>
+  <!-- Termómetro de cava -->
+  <rect x="320" y="120" width="44" height="26" rx="2" stroke-width="1.5"/>
+  <text x="342" y="138" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">-18 °C</text>
+  <path d="M60 262h240M60 256v12M300 256v12" stroke-width="1"/>
+  <text x="180" y="282" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Cava de congelación</text>
+</svg>

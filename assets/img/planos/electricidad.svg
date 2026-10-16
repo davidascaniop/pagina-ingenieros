@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#A9C1E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Planta eléctrica de emergencia, transferencia y tablero -->
+  <rect x="30" y="120" width="170" height="90" rx="3"/>
+  <path d="M40 130h70v70H40z" stroke-width="1.5"/>
+  <path d="M50 145h50M50 160h50M50 175h50M50 190h50" stroke-width="1"/>
+  <circle cx="155" cy="165" r="28"/>
+  <circle cx="155" cy="165" r="10" stroke-width="1.5"/>
+  <path d="M60 120V100h30v20" stroke-width="1.5"/>
+  <path d="M40 210v14M190 210v14" stroke-width="2"/>
+  <!-- Acometida hacia la transferencia -->
+  <path d="M200 150h40M200 160h40M200 170h40" stroke-width="1.5"/>
+  <!-- Transferencia -->
+  <rect x="240" y="110" width="60" height="100"/>
+  <path d="M255 130v20l15 10M270 130v14M285 130v20" stroke-width="1.5"/>
+  <text x="270" y="198" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">ATS</text>
+  <!-- Tablero -->
+  <path d="M300 160h30" stroke-width="1.5"/>
+  <rect x="330" y="96" width="50" height="128"/>
+  <path d="M340 112h30M340 130h30M340 148h30M340 166h30M340 184h30M340 202h30" stroke-width="1"/>
+  <path d="M20 224h370" stroke-width="2.5"/>
+  <path d="M30 250h170M30 244v12M200 244v12" stroke-width="1"/>
+  <text x="115" y="272" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Planta de emergencia</text>
+  <text x="355" y="86" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Tablero</text>
+</svg>
