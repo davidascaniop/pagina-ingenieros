@@ -1,7 +1,16 @@
 // Catálogo de suministros.
 // Para agregar un producto, copie una línea y cambie sus datos.
-// cat: electrico | clima | tuberia | construccion
+// cat: petrolero | electrico | clima | tuberia | construccion
 window.CATALOGO = [
+  // Petrolero
+  { id: 'p1', cat: 'petrolero', nombre: 'Tubería de acero al carbono', detalle: 'Para líneas de proceso, servicios y estructuras', unidad: 'tubo' },
+  { id: 'p2', cat: 'petrolero', nombre: 'Válvulas', detalle: 'Compuerta, bola y retención', unidad: 'unidad' },
+  { id: 'p3', cat: 'petrolero', nombre: 'Bridas y conexiones', detalle: 'Bridas, codos, tees y reducciones', unidad: 'unidad' },
+  { id: 'p4', cat: 'petrolero', nombre: 'Empacaduras y espárragos', detalle: 'Para uniones bridadas', unidad: 'juego' },
+  { id: 'p5', cat: 'petrolero', nombre: 'Instrumentación', detalle: 'Manómetros, termómetros y transmisores', unidad: 'unidad' },
+  { id: 'p6', cat: 'petrolero', nombre: 'Equipos a prueba de explosión', detalle: 'Luminarias, cajas y sellos para áreas clasificadas', unidad: 'unidad' },
+  { id: 'p7', cat: 'petrolero', nombre: 'Equipos de protección personal', detalle: 'Cascos, botas, guantes, lentes y ropa ignífuga', unidad: 'lote' },
+
   // Eléctrico
   { id: 'e1', cat: 'electrico', nombre: 'Transformadores de distribución', detalle: 'Monofásicos y trifásicos, tipo poste o pedestal', unidad: 'unidad' },
   { id: 'e2', cat: 'electrico', nombre: 'Motores eléctricos AC', detalle: 'Monofásicos y trifásicos para equipos e industria', unidad: 'unidad' },

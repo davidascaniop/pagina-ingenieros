@@ -1843,3 +1843,67 @@ main:focus { outline: none; }
   background: var(--paper);
   border-left: 3px solid var(--yellow);
 }
+
+/* =========================================================
+   Portada: línea superior y título más largo
+   ========================================================= */
+.hero-tagline {
+  margin-bottom: 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-stretch: 105%;
+  color: var(--yellow);
+}
+.hero h1 { font-size: clamp(1.9rem, 3.5vw, 2.85rem); max-width: 24ch; }
+
+/* Fichas: etiqueta "Ejecutado para" */
+.ficha dl div { grid-template-columns: 112px minmax(0, 1fr); }
+
+/* =========================================================
+   Inicio: suministros para la industria petrolera
+   ========================================================= */
+.oil { background: var(--navy-deep); color: rgba(255,255,255,.82); }
+.oil-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 56px;
+  align-items: center;
+}
+.oil h2 {
+  color: var(--white);
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  font-stretch: 112%;
+}
+.oil p { margin: 16px 0 26px; max-width: 52ch; }
+.oil-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(255,255,255,.25);
+}
+.oil-list li {
+  padding: 14px 4px 14px 22px;
+  position: relative;
+  font-weight: 600;
+  color: var(--white);
+  border-bottom: 1px solid rgba(255,255,255,.25);
+}
+.oil-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  background: var(--yellow);
+}
+@media (max-width: 900px) {
+  .oil-inner { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 480px) {
+  .oil-list { grid-template-columns: 1fr; }
+}
