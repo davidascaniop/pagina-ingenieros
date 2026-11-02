@@ -135,7 +135,7 @@ if (productsEl && window.CATALOGO) {
   const WHATSAPP = '584244057763';      // número de WhatsApp de la empresa
   const CORREO = '350fcingenieria@gmail.com';  // correo de ventas
   const STORE_KEY = 'listaCotizacion';
-  const CAT_NAMES = { electrico: 'Eléctrico', industrial: 'Industrial', petrolero: 'Petrolero', construccion: 'Construcción' };
+  const CAT_NAMES = { petrolero: 'Petrolero y siderúrgicos', electrico: 'Material eléctrico', respaldo: 'Respaldo de energía', maquinaria: 'Maquinaria y equipos', clima: 'Climatización y refrigeración', construccion: 'Construcción' };
 
   const searchInput = document.getElementById('cat-search');
   const countEl = document.getElementById('cat-count');
@@ -259,6 +259,12 @@ if (productsEl && window.CATALOGO) {
     renderProducts();
     renderList();
   });
+
+  // "Ver en el catálogo" desde cada línea: filtra por esa categoría y baja al catálogo
+  document.querySelectorAll('[data-go-cat]').forEach((a) => a.addEventListener('click', () => {
+    const target = document.querySelector(`[data-cat-filter="${a.dataset.goCat}"]`);
+    if (target) target.click();
+  }));
 
   catButtons.forEach((b) => b.addEventListener('click', () => {
     currentCat = b.dataset.catFilter;

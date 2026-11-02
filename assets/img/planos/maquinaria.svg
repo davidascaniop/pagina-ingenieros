@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none" stroke="#A9C1E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Excavadora sobre orugas: tren de rodaje, superestructura, cabina, pluma, brazo y cucharón -->
+  <path d="M50 230h170a22 22 0 0 1 0 44H50a22 22 0 0 1 0-44z"/>
+  <circle cx="54" cy="252" r="14" stroke-width="1.5"/>
+  <circle cx="216" cy="252" r="14" stroke-width="1.5"/>
+  <circle cx="108" cy="258" r="7" stroke-width="1.5"/>
+  <circle cx="162" cy="258" r="7" stroke-width="1.5"/>
+  <path d="M60 230v-12h150v12" stroke-width="1.5"/>
+  <!-- Superestructura y contrapeso -->
+  <path d="M40 218v-46h150v46z"/>
+  <path d="M40 186h-6v32h6" stroke-width="1.5"/>
+  <path d="M60 182h40M60 194h40M60 206h40" stroke-width="1"/>
+  <!-- Cabina -->
+  <path d="M132 172v-56h40l18 22v34"/>
+  <path d="M140 124h28l12 14v22h-40z" stroke-width="1.5"/>
+  <!-- Pluma -->
+  <path d="M186 180l58-96 18 8-52 98"/>
+  <path d="M196 170l40-12" stroke-width="1.5"/>
+  <!-- Brazo -->
+  <path d="M244 84l70 64-12 12-66-58"/>
+  <!-- Cucharón -->
+  <path d="M308 156l26 8-6 40-26-14z"/>
+  <path d="M302 190l-4 10M314 196l-4 10M326 202l-4 8" stroke-width="1.5"/>
+  <path d="M20 274h360" stroke-width="2.5"/>
+  <path d="M40 290h200M40 284v12M240 284v12" stroke-width="1"/>
+  <text x="300" y="60" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Maquinaria pesada</text>
+</svg>

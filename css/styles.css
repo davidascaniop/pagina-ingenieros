@@ -1911,3 +1911,52 @@ main:focus { outline: none; }
 /* Nosotros: registros sin documentos */
 .reg-note { margin-top: 18px; padding-left: 14px; border-left: 3px solid var(--yellow); font-weight: 500; max-width: 46ch; }
 .certs-page .permits { margin-top: 0; }
+
+/* =========================================================
+   Arquitectura de dos pilares
+   ========================================================= */
+[data-cat="maquinaria"] .div-photo, [data-cat="maquinaria"] .ficha-photo, .page-hero[data-cat="maquinaria"] { --dibujo: url("../assets/img/planos/maquinaria.svg"); }
+
+/* Inicio: Procura y suministros | Servicios integrales */
+.pillar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.pillar { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-top: 4px solid var(--navy); }
+.pillar[data-cat="suministros"] { border-top-color: var(--yellow); }
+.pillar-photo { aspect-ratio: 16 / 7; }
+.pillar-body { display: flex; flex-direction: column; flex: 1; padding: 26px 28px 30px; }
+.pillar-body h3 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); font-weight: 800; font-stretch: 110%; }
+.pillar-body > p { margin: 10px 0 18px; color: var(--steel); max-width: 52ch; }
+.pillar-links { list-style: none; margin: 0 0 24px; padding: 0; border-top: 1px solid var(--line); }
+.pillar-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 2px;
+  border-bottom: 1px solid var(--line);
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+}
+.pillar-links a::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid var(--yellow);
+  border-right: 2px solid var(--yellow);
+  transform: rotate(45deg);
+}
+.pillar-links a:hover { background: var(--paper); }
+.pillar-body .btn { margin-top: auto; align-self: flex-start; }
+@media (max-width: 860px) {
+  .pillar-grid { grid-template-columns: 1fr; }
+}
+
+/* Suministros: líneas */
+.lines { background: var(--white); }
+.line-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+.line-card { display: flex; flex-direction: column; padding: 24px; border: 1px solid var(--line); border-top: 4px solid var(--navy); }
+.line-card:first-child { border-top-color: var(--yellow); }
+.line-card h3 { font-size: 1.2rem; font-weight: 800; font-stretch: 108%; }
+.line-card ul { list-style: none; margin: 14px 0 18px; padding: 0; }
+.line-card li { position: relative; padding: 5px 0 5px 18px; font-size: .96rem; }
+.line-card li::before { content: ""; position: absolute; left: 2px; top: 13px; width: 7px; height: 7px; background: var(--yellow); }
+.line-card .link { margin-top: auto; align-self: flex-start; }
