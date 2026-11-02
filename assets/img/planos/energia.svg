@@ -14,5 +14,4 @@
   <path d="M20 110q57 18 115-18M265 92q57 36 115 6M20 150q52 14 105-18M275 132q52 32 105 4" stroke-width="1.2"/>
   <path d="M60 255h280" stroke-width="2.5"/>
   <path d="M60 263l8-8M80 263l8-8M100 263l8-8M120 263l8-8M140 263l8-8M160 263l8-8M180 263l8-8M200 263l8-8M220 263l8-8M240 263l8-8M260 263l8-8M280 263l8-8M300 263l8-8M320 263l8-8" stroke-width="1"/>
-  <text x="300" y="52" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12">115 kV</text>
 </svg>

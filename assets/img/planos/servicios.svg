@@ -17,6 +17,4 @@
   <path d="M55 190h290v14H55z" stroke-width="1.5"/>
   <path d="M75 204v16M140 204v16M260 204v16M325 204v16" stroke-width="1.5"/>
   <path d="M40 220h320" stroke-width="2.5"/>
-  <path d="M70 250h220M70 244v12M290 244v12" stroke-width="1"/>
-  <text x="180" y="270" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Motor 50 HP, bomba 4"</text>
 </svg>

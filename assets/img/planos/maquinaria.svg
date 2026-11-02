@@ -22,6 +22,4 @@
   <path d="M308 156l26 8-6 40-26-14z"/>
   <path d="M302 190l-4 10M314 196l-4 10M326 202l-4 8" stroke-width="1.5"/>
   <path d="M20 274h360" stroke-width="2.5"/>
-  <path d="M40 290h200M40 284v12M240 284v12" stroke-width="1"/>
-  <text x="300" y="60" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Maquinaria pesada</text>
 </svg>

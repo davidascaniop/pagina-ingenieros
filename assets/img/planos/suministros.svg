@@ -15,9 +15,4 @@
   <path d="M148 66h104M200 56v20" stroke-width="1"/>
   <!-- Eje de la tubería -->
   <path d="M10 190h380" stroke-width="1" stroke-dasharray="14 5 3 5"/>
-  <!-- Cotas -->
-  <path d="M130 250h140M130 244v12M270 244v12" stroke-width="1"/>
-  <text x="200" y="270" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Válvula 6" ANSI 300</text>
-  <path d="M30 150v-30h60" stroke-width="1"/>
-  <text x="96" y="124" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12">API 5L</text>
 </svg>

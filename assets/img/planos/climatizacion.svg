@@ -13,7 +13,4 @@
   <path d="M300 100v18h60v-18M310 118v8M330 118v8M350 118v8" stroke-width="1.5"/>
   <path d="M300 140c10 8 50 8 60 0M296 152c14 10 54 10 68 0" stroke-width="1" stroke-dasharray="4 4"/>
   <path d="M20 242h200" stroke-width="2.5"/>
-  <path d="M40 262h150M40 256v12M190 256v12" stroke-width="1"/>
-  <text x="115" y="282" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Unidad 5 TR</text>
-  <text x="330" y="52" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Ducto</text>
 </svg>

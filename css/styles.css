@@ -1959,3 +1959,21 @@ main:focus { outline: none; }
 .line-card li { position: relative; padding: 5px 0 5px 18px; font-size: .96rem; }
 .line-card li::before { content: ""; position: absolute; left: 2px; top: 13px; width: 7px; height: 7px; background: var(--yellow); }
 .line-card .link { margin-top: auto; align-self: flex-start; }
+
+/* =========================================================
+   Portada con foto (Unsplash, licencia gratuita) hasta tener una foto propia
+   ========================================================= */
+.hero-photo {
+  background:
+    linear-gradient(90deg, rgba(8,22,41,.95) 0%, rgba(8,22,41,.84) 38%, rgba(8,22,41,.5) 72%, rgba(8,22,41,.38) 100%),
+    url("../assets/img/portada.jpg") center 65% / cover no-repeat,
+    #081629;
+}
+@media (max-width: 900px) {
+  .hero-photo {
+    background:
+      linear-gradient(180deg, rgba(8,22,41,.78) 0%, rgba(8,22,41,.9) 55%, rgba(8,22,41,.96) 100%),
+      url("../assets/img/portada-movil.jpg") center top / cover no-repeat,
+      #081629;
+  }
+}

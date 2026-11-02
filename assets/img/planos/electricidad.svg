@@ -12,13 +12,9 @@
   <!-- Transferencia -->
   <rect x="240" y="110" width="60" height="100"/>
   <path d="M255 130v20l15 10M270 130v14M285 130v20" stroke-width="1.5"/>
-  <text x="270" y="198" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">ATS</text>
   <!-- Tablero -->
   <path d="M300 160h30" stroke-width="1.5"/>
   <rect x="330" y="96" width="50" height="128"/>
   <path d="M340 112h30M340 130h30M340 148h30M340 166h30M340 184h30M340 202h30" stroke-width="1"/>
   <path d="M20 224h370" stroke-width="2.5"/>
-  <path d="M30 250h170M30 244v12M200 244v12" stroke-width="1"/>
-  <text x="115" y="272" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Planta de emergencia</text>
-  <text x="355" y="86" fill="#A9C1E0" stroke="none" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Tablero</text>
 </svg>
