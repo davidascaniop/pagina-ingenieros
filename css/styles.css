@@ -1977,3 +1977,11 @@ main:focus { outline: none; }
       #081629;
   }
 }
+
+/* Encabezados internos: fondo azul liso, sin dibujo */
+.page-hero[data-cat] {
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 32px),
+    linear-gradient(135deg, #0E2340, #081629 70%);
+}
