@@ -1907,3 +1907,7 @@ main:focus { outline: none; }
 @media (max-width: 480px) {
   .oil-list { grid-template-columns: 1fr; }
 }
+
+/* Nosotros: registros sin documentos */
+.reg-note { margin-top: 18px; padding-left: 14px; border-left: 3px solid var(--yellow); font-weight: 500; max-width: 46ch; }
+.certs-page .permits { margin-top: 0; }
