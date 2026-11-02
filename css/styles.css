@@ -1985,3 +1985,38 @@ main:focus { outline: none; }
     repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 32px),
     linear-gradient(135deg, #0E2340, #081629 70%);
 }
+
+
+/* =========================================================
+   Encabezados internos con foto (Unsplash, licencia gratuita) hasta tener fotos propias
+   ========================================================= */
+.page-hero[data-foto="suministros"] { --foto: url("../assets/img/fondos/suministros.jpg"); }
+.page-hero[data-foto="maquinaria"] { --foto: url("../assets/img/fondos/maquinaria.jpg"); }
+.page-hero[data-foto="obras"] { --foto: url("../assets/img/fondos/obras.jpg"); }
+.page-hero[data-foto="clima"] { --foto: url("../assets/img/fondos/clima.jpg"); }
+.page-hero[data-foto="frio"] { --foto: url("../assets/img/fondos/frio.jpg"); }
+.page-hero[data-foto="electricidad"] { --foto: url("../assets/img/fondos/electricidad.jpg"); }
+.page-hero[data-foto="nosotros"] { --foto: url("../assets/img/fondos/nosotros.jpg"); }
+.page-hero[data-foto="portada"] { --foto: url("../assets/img/portada.jpg"); }
+.page-hero[data-foto] {
+  background:
+    linear-gradient(90deg, rgba(8,22,41,.95) 0%, rgba(8,22,41,.86) 40%, rgba(8,22,41,.55) 75%, rgba(8,22,41,.45) 100%),
+    var(--foto) center / cover no-repeat,
+    #081629;
+}
+@media (max-width: 900px) {
+  .page-hero[data-foto="suministros"] { --foto: url("../assets/img/fondos/suministros-movil.jpg"); }
+  .page-hero[data-foto="maquinaria"] { --foto: url("../assets/img/fondos/maquinaria-movil.jpg"); }
+  .page-hero[data-foto="obras"] { --foto: url("../assets/img/fondos/obras-movil.jpg"); }
+  .page-hero[data-foto="clima"] { --foto: url("../assets/img/fondos/clima-movil.jpg"); }
+  .page-hero[data-foto="frio"] { --foto: url("../assets/img/fondos/frio-movil.jpg"); }
+  .page-hero[data-foto="electricidad"] { --foto: url("../assets/img/fondos/electricidad-movil.jpg"); }
+  .page-hero[data-foto="nosotros"] { --foto: url("../assets/img/fondos/nosotros-movil.jpg"); }
+  .page-hero[data-foto="portada"] { --foto: url("../assets/img/portada-movil.jpg"); }
+  .page-hero[data-foto] {
+    background:
+      linear-gradient(180deg, rgba(8,22,41,.82) 0%, rgba(8,22,41,.92) 100%),
+      var(--foto) center / cover no-repeat,
+      #081629;
+  }
+}
