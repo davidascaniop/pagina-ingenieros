@@ -1805,7 +1805,7 @@ main:focus { outline: none; }
   .nav .submenu a { padding: 10px 12px; }
 }
 @media (max-width: 760px) {
-  .topbar .topbar-place, .topbar .topbar-links span { display: none; }
+  .topbar .topbar-place, .topbar .topbar-links span, .topbar .topbar-mail span { display: none; }
   .topbar ul { gap: 16px; }
   .topbar-inner { min-height: 34px; font-size: .8rem; }
 }
